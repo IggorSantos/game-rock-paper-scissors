@@ -7,15 +7,15 @@
 </head>
 <body>
     <div class="container">
-        <div class="score row">
+        <div class="score-header row">
                 <ul>
                     <li>ROCK</li>
                     <li>PAPER</li>
                     <li>SCISSORS</li>
                 </ul>
-                <div>
+                <div class="score">
                     <p>SCORE</p>
-                    <p>0</p>
+                    <p class="score-point">0</p>
                 </div>
         </div>
         <div class="row"></div>
@@ -25,15 +25,28 @@
 </html>
 
 <style>
-    .score{
+    body{
+        background: hsl(214, 47%, 23%);
+
+    }
+    .score-header{
         border: solid 1px hsl(192, 1%, 49%);
         margin: 0.2rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
+    .score{
+        padding: 0.5rem;
+    }
+    .score-point{
+        font-size: 2rem;
+        margin: 0;
+        text-align: center;
+    }
     ul{
         list-style-type: none;
+        padding: 0.5rem;
     }
     .
 </style>
