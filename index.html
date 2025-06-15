@@ -18,8 +18,23 @@
                     <p class="score-point">0</p>
                 </div>
         </div>
-        <div class="row"></div>
-        <div class="row"></div>
+        <main class="row">
+            <div class="option-1">
+                <img class="option-img" src="./images/icon-paper.svg" alt="">
+            </div>
+            <div class="option-2">
+                <img class="option-img" src="./images/icon-paper.svg" alt="">
+            </div>
+            <div class="option-3">
+                <img class="option-img" src="./images/icon-paper.svg" alt="">
+            </div>
+
+
+        </main>
+
+        <div class="row">
+            Teste
+        </div>
     </div>
 </body>
 </html>
@@ -57,5 +72,48 @@
     ul li{
         color: aliceblue;
     }
-    .
+    main{
+        display: grid;
+        grid-template-areas: "option-1 . option-2"
+                             ". option-3 .";   
+        background-image: url("./images/bg-triangle.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; /* ou cover, dependendo do efeito desejado */
+        padding: 2rem;
+        min-height: 300px;
+        margin-top: 5rem;
+    }
+    main img{
+        width: 70%;
+    }
+    .option-img{
+        width: 10%;
+
+    }
+    .option-1{
+        grid-area: option-1;
+        border: 1px solid blue;
+        border-radius: 50%;
+        background-color: white;
+        height: 50%;
+        border-radius: 100
+    }
+    .option-2{
+        grid-area: option-2;
+        border: 1px solid blue;
+        border-radius: 50%;
+        background-color: white;
+        height: 50%;
+        border-radius: 100
+    }
+    .option-3{
+        grid-area: option-3;
+        border: 1px solid blue;
+        border-radius: 50%;
+        background-color: white;
+        height: 50%;
+        border-radius: 100
+    }
+
 </style>
