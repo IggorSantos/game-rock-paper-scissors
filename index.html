@@ -19,14 +19,14 @@
                 </div>
         </div>
         <main class="row">
-            <div class="option-1">
+            <div class="option paper">
                 <img class="option-img" src="./images/icon-paper.svg" alt="">
             </div>
-            <div class="option-2">
-                <img class="option-img" src="./images/icon-paper.svg" alt="">
+            <div class="option scissors">
+                <img class="option-img" src="./images/icon-scissors.svg" alt="">
             </div>
-            <div class="option-3">
-                <img class="option-img" src="./images/icon-paper.svg" alt="">
+            <div class="option rock">
+                <img class="option-img" src="./images/icon-rock.svg" alt="">
             </div>
 
 
@@ -87,29 +87,31 @@
     main img{
         width: 70%;
     }
-    .option-img{
-        width: 10%;
-
-    }
-    .option-1{
+    .paper{
+        display: flex;
+        justify-content: center;
         grid-area: option-1;
-        border: 1px solid blue;
+        border: 5px solid blue;
         border-radius: 50%;
         background-color: white;
         height: 50%;
         border-radius: 100
     }
-    .option-2{
+    .scissors{
+        display: flex;
+        justify-content: center;
         grid-area: option-2;
-        border: 1px solid blue;
+        border: 5px solid yellow;
         border-radius: 50%;
         background-color: white;
         height: 50%;
         border-radius: 100
     }
-    .option-3{
+    .rock{
+        display: flex;
+        justify-content: center;
         grid-area: option-3;
-        border: 1px solid blue;
+        border: 5px solid red;
         border-radius: 50%;
         background-color: white;
         height: 50%;
