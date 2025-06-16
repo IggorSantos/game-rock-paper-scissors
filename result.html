@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+</head>
+<body>
+    <div class="container">
+        <div class="score-header row">
+                <ul>
+                    <li>ROCK</li>
+                    <li>PAPER</li>
+                    <li>SCISSORS</li>
+                </ul>
+                <div class="score">
+                    <p>SCORE</p>
+                    <p class="score-point">0</p>
+                </div>
+        </div>
+        <main class="row">
+            <div class="option paper">
+                <img class="option-img" src="./images/icon-paper.svg" alt="">
+                <p>You Picked</p>
+            </div>
+            <div class="option scissors">
+                <img class="option-img" src="./images/icon-scissors.svg" alt="">
+            </div>
+
+
+
+        </main>
+
+        <div class="result">
+            <h2>YOU WIN</h2>
+            <a href=""><button>PLAY AGAIN</button></a>
+
+        </div>
+
+        <footer class="row">
+            <a href="rules.html"><button class="button-rules">RULES</button></a>
+        </footer>
+    </div>
+</body>
+</html>
+
+<style>
+    body{
+        background: hsl(214, 47%, 23%);
+
+    }
+    .score-header{
+        border: solid 3px hsl(192, 1%, 49%);
+        border-radius: 2%;
+        margin: 0.2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .score{
+        padding: 0.5rem 1rem;
+        background-color: aliceblue;
+        margin: 0.5rem;
+    }
+    .score p{
+        color: hsl(229, 25%, 31%);
+    }
+    .score-point{
+        font-size: 2rem;
+        margin: 0;
+        text-align: center;
+    }
+    ul{
+        list-style-type: none;
+        padding: 0.5rem;
+    }
+    ul li{
+        color: aliceblue;
+    }
+    main{
+        display: grid;
+        grid-template-areas: "option-1 . option-2"
+                             ". option-3 .";   
+        
+        margin-top: 5rem;
+    }
+    main img{
+        width: 70%;
+    }
+    .paper{
+        display: flex;
+        justify-content: center;
+        grid-area: option-1;
+        border: 5px solid blue;
+        border-radius: 50%;
+        background-color: white;
+        height: 50%;
+        border-radius: 100
+    }
+    .scissors{
+        display: flex;
+        justify-content: center;
+        grid-area: option-2;
+        border: 5px solid yellow;
+        border-radius: 50%;
+        background-color: white;
+        height: 50%;
+        border-radius: 100
+    }
+    .rock{
+        display: flex;
+        justify-content: center;
+        grid-area: option-3;
+        border: 5px solid red;
+        border-radius: 50%;
+        background-color: white;
+        height: 50%;
+        border-radius: 100
+    }
+    footer{
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+    }
+    .button-rules{
+        width: 10rem;
+        height: 3rem;
+        border-radius: 10px;
+        background-color: hsl(214, 47%, 23%);
+        color: white;
+        border: 1px solid white;
+
+    }
+
+    .result{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
