@@ -19,21 +19,30 @@
                 </div>
         </div>
         <main class="row">
-            <div class="option paper">
-                <img class="option-img" src="./images/icon-paper.svg" alt="">
+            <div>
+                <div class="option paper">
+                    <img class="option-img" src="./images/icon-paper.svg" alt="">               
+                </div>
                 <p>You Picked</p>
             </div>
-            <div class="option scissors">
-                <img class="option-img" src="./images/icon-scissors.svg" alt="">
+
+            <div>
+                <div class="option scissors">
+                    <img class="option-img" src="./images/icon-scissors.svg" alt="">
+                </div>
+                <p>The House Picked</p>
             </div>
+           
+            
+           
 
 
 
         </main>
 
         <div class="result">
-            <h2>YOU WIN</h2>
-            <a href=""><button>PLAY AGAIN</button></a>
+            <h1>YOU WIN</h1>
+            <a href=""><button class="button-play">PLAY AGAIN</button></a>
 
         </div>
 
@@ -78,49 +87,57 @@
         color: aliceblue;
     }
     main{
-        display: grid;
-        grid-template-areas: "option-1 . option-2"
-                             ". option-3 .";   
-        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;    
         margin-top: 5rem;
     }
     main img{
-        width: 70%;
+        width: 6rem;
+    }
+    main p{
+        color: white;
     }
     .paper{
         display: flex;
         justify-content: center;
         grid-area: option-1;
-        border: 5px solid blue;
+        border: 8px solid blue;
         border-radius: 50%;
         background-color: white;
-        height: 50%;
         border-radius: 100
     }
     .scissors{
         display: flex;
         justify-content: center;
         grid-area: option-2;
-        border: 5px solid yellow;
+        border: 8px solid yellow;
         border-radius: 50%;
         background-color: white;
-        height: 50%;
         border-radius: 100
     }
     .rock{
         display: flex;
         justify-content: center;
         grid-area: option-3;
-        border: 5px solid red;
+        border: 8px solid red;
         border-radius: 50%;
         background-color: white;
-        height: 50%;
         border-radius: 100
     }
     footer{
         margin-top: 5rem;
         display: flex;
         justify-content: center;
+    }
+    .button-play{
+        width: 12rem;
+        height: 3rem;
+        border-radius: 10px;
+        background-color: white;
+        color: black;
+        border: 1px solid white;
+
     }
     .button-rules{
         width: 10rem;
@@ -137,6 +154,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .result h1{
+        color: white;
     }
 
 </style>
