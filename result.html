@@ -15,20 +15,20 @@
                 </ul>
                 <div class="score">
                     <p>SCORE</p>
-                    <p class="score-point">0</p>
+                    <p id="score" class="score-point"></p>
                 </div>
         </div>
         <main class="row">
             <div>
                 <div class="option paper">
-                    <img class="option-img" src="./images/icon-paper.svg" alt="">               
+                    <img class="option-img" src="" alt="" id="img-you">               
                 </div>
                 <p>You Picked</p>
             </div>
 
             <div>
                 <div class="option scissors">
-                    <img class="option-img" src="./images/icon-scissors.svg" alt="">
+                    <img class="option-img" src="" alt="" id="img-computer">
                 </div>
                 <p>The House Picked</p>
             </div>
@@ -41,7 +41,7 @@
         </main>
 
         <div class="result">
-            <h1>YOU WIN</h1>
+            <h1 id="result-text">YOU WIN</h1>
             <a href=""><button class="button-play">PLAY AGAIN</button></a>
 
         </div>
@@ -160,3 +160,65 @@
     }
 
 </style>
+
+<script>
+    function placar() {
+      const vitorias = localStorage.getItem('vitorias') || 0;
+      document.getElementById('score').innerText = vitorias;
+    }
+
+    let choice = localStorage.getItem('choice');
+    let computer_choice = localStorage.getItem('computer_choice');
+    let result = localStorage.getItem('result');
+
+    if(choice == 1){
+        image_you = document.getElementById("img-you");
+        image_you.src = "./images/icon-paper.svg";
+
+    }else if(choice == 2){
+        image_you = document.getElementById("img-you");
+        image_you.src = "./images/icon-scissors.svg";
+
+    }
+    else{
+        image_you = document.getElementById("img-you");
+        image_you.src = "./images/icon-rock.svg";
+    }
+
+    
+    if(computer_choice == 1){
+        image_computer = document.getElementById("img-computer");
+        image_computer.src = "./images/icon-paper.svg";
+
+    }else if(computer_choice == 2){
+        image_computer = document.getElementById("img-computer");
+        image_computer.src = "./images/icon-scissors.svg";
+
+    }
+    else{
+        image_computer = document.getElementById("img-computer");
+        image_computer.src = "./images/icon-rock.svg";
+    }
+
+    if(result == 'Vitoria'){
+        resultText = document.getElementById("result-text")
+        resultText.innerText = "You Win"
+
+    }else if(result == 'Derrota'){
+        resultText = document.getElementById("result-text")
+        resultText.innerText = "You Lose"
+
+    }else{
+        resultText = document.getElementById("result-text")
+        resultText.innerText = "Tie"
+
+    }
+
+    placar();
+
+
+    
+
+    
+
+</script>

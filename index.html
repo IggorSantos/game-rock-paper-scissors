@@ -15,17 +15,17 @@
                 </ul>
                 <div class="score">
                     <p>SCORE</p>
-                    <p class="score-point">0</p>
+                    <p id="score" class="score-point">0</p>
                 </div>
         </div>
         <main class="row">
-            <div class="option paper">
+            <div class="option paper" onclick="playgame(1)">
                 <img class="option-img" src="./images/icon-paper.svg" alt="">
             </div>
-            <div class="option scissors">
+            <div class="option scissors" onclick="playgame(2)">
                 <img class="option-img" src="./images/icon-scissors.svg" alt="">
             </div>
-            <div class="option rock">
+            <div class="option rock" onclick="playgame(3)">
                 <img class="option-img" src="./images/icon-rock.svg" alt="">
             </div>
 
@@ -133,3 +133,46 @@
     }
 
 </style>
+
+<script>
+
+    if (!localStorage.getItem('vitorias')) {
+      localStorage.setItem('vitorias', 0);
+    }
+
+    function placar(){
+        const vitorias = localStorage.getItem('vitorias') || 0;
+        document.getElementById('score').innerText = vitorias;
+    }
+    placar();
+
+    function playgame(option){
+        let choice = option
+        let computer_choice = Math.floor(Math.random() * 3) + 1;
+        let result = "";
+        if(choice == computer_choice){
+            result = "Empate";
+        }
+        else if((choice === 3 && computer_choice === 2) ||
+                (choice === 1 && computer_choice === 3) ||
+                (choice === 2 && computer_choice === 1))
+        {
+            result = "Vitoria";
+            let placar = parseInt(localStorage.getItem('vitorias'));
+            localStorage.setItem('vitorias', placar + 1);
+
+            
+        }else{
+            result = "Derrota";
+    }
+
+    localStorage.setItem('result', result);
+    localStorage.setItem('choice', choice);
+    localStorage.setItem('computer_choice', computer_choice);
+
+    window.location.href = 'result.html';
+
+
+}
+
+</script>
